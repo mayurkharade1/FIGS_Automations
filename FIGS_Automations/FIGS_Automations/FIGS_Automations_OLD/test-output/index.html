@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-FIGS_Automation_Suite" class="navigator-link ">
-                    <span>C:\FIGS_Automations\FIGS_Automations\testng.xml</span>
+                    <span>D:\Projects\FIGS_Automations\FIGS_Automations\FIGS_Automations\FIGS_Automations_OLD\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,36 +129,29 @@
                   <a name="testLoginAndAgentFP">
                   </a> <!-- testLoginAndAgentFP -->
                   <span class="method-name">testLoginAndAgentFP</span>
-                  <div class="stack-trace">java.lang.RuntimeException: ❌ MoneyTrasnfer flow failed
-	at com.figs.automation.flows.LoanDeposit.run(LoanDeposit.java:38)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:41)
+                  <div class="stack-trace">java.lang.RuntimeException: ❌ eKYC flow failed
+	at com.figs.automation.flows.AccountOpening.run(AccountOpening.java:37)
+	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:55)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:18)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//a[normalize-space(text())=&apos;Loan Deposit&apos;])[2]&quot;}
-  (Session info: chrome=140.0.7339.128)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8a2055fbef5462f8a5891ebaf394f87, findElement {value=(//a[normalize-space(text())=&apos;Loan Deposit&apos;])[2], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54405}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54405/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d8a2055fbef5462f8a5891ebaf394f87
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.figs.automation.runners.CommonFlow.ClickLoanDeposit(CommonFlow.java:58)
-	at com.figs.automation.flows.LoanDeposit.LoanToDeposit(LoanDeposit.java:71)
-	at com.figs.automation.flows.LoanDeposit.run(LoanDeposit.java:36)
-	... 30 more
-... Removed 32 stack frames
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.io.IOException: Truncated ZIP file
+	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readDeflated(ZipArchiveInputStream.java:1005)
+	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.read(ZipArchiveInputStream.java:927)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.read(ZipArchiveThresholdInputStream.java:78)
+	at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:245)
+	at org.apache.poi.util.IOUtils.toByteArrayWithMaxLength(IOUtils.java:225)
+	at org.apache.poi.openxml4j.util.ZipArchiveFakeEntry.&lt;init&gt;(ZipArchiveFakeEntry.java:82)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:98)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:157)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:313)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:287)
+	at com.figs.automation.flows.AccountOpening.eKYC(AccountOpening.java:48)
+	at com.figs.automation.flows.AccountOpening.run(AccountOpening.java:35)
+	... 28 more
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -167,7 +160,7 @@ Session ID: d8a2055fbef5462f8a5891ebaf394f87
         </div> <!-- panel FIGS_Automation_Suite -->
         <div panel-name="test-xml-FIGS_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\FIGS_Automations\FIGS_Automations\testng.xml</span>
+            <span class="header-content">D:\Projects\FIGS_Automations\FIGS_Automations\FIGS_Automations\FIGS_Automations_OLD\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -220,12 +213,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLoginAndAgentFP')
 data.setCell(0, 2, 'com.figs.automation.tests.LoginTest')
-data.setCell(0, 3, 154223);
+data.setCell(0, 3, 35129);
 window.suiteTableData['FIGS_Automation_Suite']= { tableData: data, tableDiv: 'times-div-FIGS_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-FIGS_Automation_Suite">
               </div> <!-- times-div-FIGS_Automation_Suite -->
             </div> <!-- times-div -->
@@ -260,11 +253,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testLoginAndAgentFP</span>
-                <span class="method-start">4423 ms</span>
+                <span class="method-start">5408 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">158650 ms</span>
+                <span class="method-start">40547 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
