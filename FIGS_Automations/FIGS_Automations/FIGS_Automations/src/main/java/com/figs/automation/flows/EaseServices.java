@@ -34,14 +34,14 @@ public class EaseServices {
         try {
         	ATMCardBlock();
         } catch (Exception e) {
-            throw new RuntimeException("❌ATM card block flow failed", e);
+            throw new RuntimeException("ATM card block flow failed", e);
         }
     }
     public void run_ChequeBookRequest() {
         try {
         	ChequeBookRequest();
         } catch (Exception e) {
-            throw new RuntimeException("❌ cheque book request  flow failed", e);
+            throw new RuntimeException(" cheque book request  flow failed", e);
         }
     }
     
@@ -49,7 +49,7 @@ public class EaseServices {
         try {
         	StopPaymentofCheque();
         } catch (Exception e) {
-            throw new RuntimeException("❌ Stop Cheque book payment flow failed", e);
+            throw new RuntimeException(" Stop Cheque book payment flow failed", e);
         }
     }
     
@@ -57,14 +57,14 @@ public class EaseServices {
         // ✅ Normalize Excel path
         String excelPath = ConfigReader.get("Acquisitiontestdata.path");
         File excelFile = new File(excelPath).getAbsoluteFile();
-        System.out.println("✅ Using Excel file: " + excelFile.getAbsolutePath());
+        System.out.println(" Using Excel file: " + excelFile.getAbsolutePath());
 
         try (FileInputStream fis = new FileInputStream(excelFile);
              XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 
             XSSFSheet sheet = workbook.getSheet("ATMCard_Block");
             if (sheet == null) {
-                throw new IllegalArgumentException("❌ Sheet 'ATMCard_Block' not found in file: " + excelFile.getAbsolutePath());
+                throw new IllegalArgumentException(" Sheet 'ATMCard_Block' not found in file: " + excelFile.getAbsolutePath());
             }
 
             for (int rowindx = 2; rowindx <= sheet.getLastRowNum(); rowindx++) {
@@ -102,14 +102,14 @@ public class EaseServices {
         // ✅ Normalize Excel path
         String excelPath = ConfigReader.get("Acquisitiontestdata.path");
         File excelFile = new File(excelPath).getAbsoluteFile();
-        System.out.println("✅ Using Excel file: " + excelFile.getAbsolutePath());
+        System.out.println(" Using Excel file: " + excelFile.getAbsolutePath());
 
         try (FileInputStream fis = new FileInputStream(excelFile);
              XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 
             XSSFSheet sheet = workbook.getSheet("ChequeBook");
             if (sheet == null) {
-                throw new IllegalArgumentException("❌ Sheet 'ChequeBook' not found in file: " + excelFile.getAbsolutePath());
+                throw new IllegalArgumentException(" Sheet 'ChequeBook' not found in file: " + excelFile.getAbsolutePath());
             }
 
             for (int rowindx = 2; rowindx <= sheet.getLastRowNum(); rowindx++) {
@@ -156,7 +156,7 @@ public class EaseServices {
 
             XSSFSheet sheet = workbook.getSheet("StopPaymentCheque");
             if (sheet == null) {
-                throw new IllegalArgumentException("❌ Sheet 'StopPaymentCheque' not found in file: " + excelFile.getAbsolutePath());
+                throw new IllegalArgumentException(" Sheet 'StopPaymentCheque' not found in file: " + excelFile.getAbsolutePath());
             }
 
             for (int rowindx = 2; rowindx <= sheet.getLastRowNum(); rowindx++) {

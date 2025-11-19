@@ -34,7 +34,7 @@ public class Aadhaar_Seeding_SubKO {
         try {
         	AadhaarseedingsubKO1();
         } catch (Exception e) {
-            throw new RuntimeException("❌ eKYC flow failed", e);
+            throw new RuntimeException(" Aadhaar_Seeding_SubKO flow failed", e);
         }
     }
 
@@ -42,14 +42,14 @@ public class Aadhaar_Seeding_SubKO {
         // ✅ Normalize Excel path
         String excelPath = ConfigReader.get("Acquisitiontestdata.path");
         File excelFile = new File(excelPath).getAbsoluteFile();
-        System.out.println("✅ Using Excel file: " + excelFile.getAbsolutePath());
+        System.out.println(" Using Excel file: " + excelFile.getAbsolutePath());
 
         try (FileInputStream fis = new FileInputStream(excelFile);
              XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 
             XSSFSheet sheet = workbook.getSheet("Aadhaar_Seeding_SubKO");
             if (sheet == null) {
-                throw new IllegalArgumentException("❌ Sheet 'Aadhaar_Seeding_SubKO' not found in file: " + excelFile.getAbsolutePath());
+                throw new IllegalArgumentException(" Sheet 'Aadhaar_Seeding_SubKO' not found in file: " + excelFile.getAbsolutePath());
             }
 
             for (int rowindx = 2; rowindx <= sheet.getLastRowNum(); rowindx++) {

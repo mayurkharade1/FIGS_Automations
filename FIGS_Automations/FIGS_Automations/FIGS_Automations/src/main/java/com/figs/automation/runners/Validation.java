@@ -2841,7 +2841,7 @@ public void OkPopUP() {
  */
 	public boolean ValidateAccountOpeningClick()
 	{	
-		WebElement subfunc= driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
+		WebElement subfunc= driver.findElement(By.xpath("//a[normalize-space(text())='EKYC Account Opening']"));
 		boolean screen= subfunc.isDisplayed();
 		if(screen)
 		{
@@ -2857,7 +2857,7 @@ public void OkPopUP() {
 public boolean ValidateeKYCClick ()
 {
 	
-	WebElement ekycButton = driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
+	WebElement ekycButton = driver.findElement(By.xpath("//a[normalize-space(text())='EKYC Account Opening']"));
 	String classValue = ekycButton.getAttribute("class");
 
 	if (classValue.contains("active")) {
@@ -2869,7 +2869,7 @@ public boolean ValidateeKYCClick ()
 
 public boolean ValidateRDSTDRClick() {
 
-	WebElement RDSTDRButton = driver.findElement(By.xpath("//a[@role='button']//div[normalize-space(text())='RD/STDR']"));
+	WebElement RDSTDRButton = driver.findElement(By.xpath("//a[normalize-space(text())='RD/STDR Account Opening']"));
 	String classValue = RDSTDRButton.getAttribute("class");
 
 	if (classValue.contains("active")) {
@@ -2914,7 +2914,7 @@ public boolean ValidateselectRadio(String index) {
 
 
 public boolean ValidateMonths( String expectedValue) {
-    WebElement dropdownElement = driver.findElement(By.xpath("//div[@class='css-hlgwow']//input[@id='react-select-3-input']"));
+    WebElement dropdownElement = driver.findElement(By.xpath("(//input[contains(@id,'react-select')])[1]"));
     Select select = new Select(dropdownElement);
     String selectedText = select.getFirstSelectedOption().getText().trim();
     txt= selectedText;
@@ -3117,7 +3117,7 @@ public  boolean textfieldgetvalue(String index)
 
 public  boolean isClickedViewLoanDataCollection()
 {
-	WebElement clickadharseeding=driver.findElement(By.xpath("//a[contains(@class, 'nav-link') and contains(text(), 'View Loan Data Collection')]"));
+	WebElement clickadharseeding=driver.findElement(By.xpath("//a[normalize-space(text())='View Loan Data Collection']"));
 	
 	boolean clickcheck=clickadharseeding.isDisplayed();
 	if(clickcheck)

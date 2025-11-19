@@ -89,9 +89,15 @@ public class LoginPage {
     }
 
     private void click(By locator) {
-    	WebElement btn = driver.findElement(locator);
+        WebElement btn = driver.findElement(locator);
 
-    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn);
-        wait.until(ExpectedConditions.elementToBeClickable(btn)).click();
+        // Scroll into view
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn);
+
+        // Wait for the element to be present (optional, but safe)
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+        // Use JavaScript to perform the click
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
     }
 }

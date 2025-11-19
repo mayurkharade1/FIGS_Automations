@@ -9,42 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">FIGS Automation Suite</th></tr>
-<tr><td><a href="#t0">Login + Functionality Tests</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">88,851</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Login + Functionality Tests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">64,531</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FIGS Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login + Functionality Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.figs.automation.tests.LoginTest</td><td><a href="#m0">testLoginAndAgentFP</a></td><td rowspan="1">1761813324078</td><td rowspan="1">85050</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">FIGS Automation Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login + Functionality Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.figs.automation.tests.LoginTest</td><td><a href="#m0">testLoginAndAgentFP</a></td><td rowspan="1">1763469374654</td><td rowspan="1">53192</td></tr></tbody>
 </table>
-<h2>Login + Functionality Tests</h2><h3 id="m0">com.figs.automation.tests.LoginTest#testLoginAndAgentFP</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException:  RDSTDR flow failed
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:46)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:74)
-	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:16)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;]&quot;}
-  (Session info: chrome=141.0.7390.125)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5822a1e367f8975f9f1b9797c9e11355, findElement {value=//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\PREDIC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5822a1e367f8975f9f1b9797c9e11355
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.figs.automation.runners.Validation.ValidateMonths(Validation.java:2917)
-	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1339)
-	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1289)
-	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:61)
-	at com.figs.automation.flows.AccountOpening.RDSTDR(AccountOpening.java:124)
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:44)
-	... 28 more
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Login + Functionality Tests</h2><h3 id="m0">com.figs.automation.tests.LoginTest#testLoginAndAgentFP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -2477,7 +2477,7 @@ public void OkPopUP() {
 	public boolean ValidateAccountOpeningClick()
 	{
 		
-		WebElement subfunc= driver.findElement(By.xpath("//a[contains(text(), 'Account Opening Services')]"));
+		WebElement subfunc= driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
 		boolean screen= subfunc.isDisplayed();
 		if(screen)
 		{
@@ -2491,7 +2491,7 @@ public void OkPopUP() {
 public boolean ValidateeKYCClick ()
 {
 	
-	WebElement ekycButton = driver.findElement(By.xpath("//a[contains(text(), 'EKYC Account Opening')]"));
+	WebElement ekycButton = driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
 	String classValue = ekycButton.getAttribute("class");
 
 	if (classValue.contains("active")) {

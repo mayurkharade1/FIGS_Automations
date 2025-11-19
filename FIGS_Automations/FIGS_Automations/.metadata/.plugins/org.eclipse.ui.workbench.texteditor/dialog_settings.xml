@@ -2,35 +2,29 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Disability"/>
-		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="selection" value="SelectAccRadio"/>
+		<item key="wrap" value="false"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="SelectAccRadio"/>
+			<item value="selectAccountno"/>
+			<item value="EnterReferenceNumber"/>
+			<item value="AccountOpening"/>
 			<item value="Disability"/>
 			<item value="MoneyTransfer"/>
 			<item value="ClickSubmit"/>
 			<item value="ClickoneKYC"/>
-			<item value="SelectRadioButton_2"/>
-			<item value="OkPopUP"/>
-			<item value="OkPopUp"/>
-			<item value="Okpopup"/>
-			<item value="Okpop"/>
-			<item value="Alert"/>
-			<item value="Proceed"/>
-			<item value="ValidatePROCEED_CONFIRMButtonIsEnabled"/>
-			<item value="upAlert();"/>
-			<item value="SuccessfulAuthorize"/>
-			<item value="ProceedPopUp"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1307"/>
-		<item key="DIALOG_Y_ORIGIN" value="561"/>
+		<item key="DIALOG_X_ORIGIN" value="1216"/>
+		<item key="DIALOG_Y_ORIGIN" value="167"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

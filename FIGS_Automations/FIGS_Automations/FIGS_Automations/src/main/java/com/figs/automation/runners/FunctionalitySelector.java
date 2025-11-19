@@ -106,12 +106,12 @@ public class FunctionalitySelector {
                 break;
 
             default:
-                System.out.println("❌ Functionality not implemented: " + functionality);
+                System.out.println(" Functionality not implemented: " + functionality);
         }
     }
 
     private void runAll() {
-        System.out.println("▶ Running all flows sequentially...");
+        System.out.println(" Running all flows sequentially...");
 
 		try {
 			new LoanDeposit(driver).run_LoanToDeposit();
@@ -216,6 +216,6 @@ public class FunctionalitySelector {
 		}
     
         
-        System.out.println("✅ All flows executed.");
+        System.out.println(" All flows executed.");
     }
 }

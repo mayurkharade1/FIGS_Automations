@@ -391,9 +391,9 @@ public class CommonElements {
         	
 			case "CustomerCreation":
 				Actions action = new Actions(driver);
-				WebElement accountOpeningLink = driver.findElement(By.xpath("//a[contains(text(), 'Account Opening Services')]"));
+				WebElement accountOpeningLink = driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-AccOp']"));
 				action.moveToElement(accountOpeningLink).click().build().perform();	
-				break;
+			break;
         	
 			case "click eKYC":
 				ClickoneKYC();
@@ -551,7 +551,7 @@ public class CommonElements {
     public void ClickoneKYC() {
 		
 			Actions action = new Actions(driver);
-			WebElement ekyc=driver.findElement(By.xpath("//a[contains(text(), 'EKYC Account Opening')]"));
+			WebElement ekyc=driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
 			action.moveToElement(ekyc).click().build().perform();	
 	}
     

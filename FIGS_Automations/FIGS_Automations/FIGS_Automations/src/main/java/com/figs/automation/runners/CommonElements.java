@@ -103,7 +103,7 @@ public class CommonElements {
                     
 
     			case "Agent Aadhaar Seeding":
-    			WebElement Menu = driver.findElement(By.xpath("(//a[@role='button' and contains(text(), 'Aadhaar Seeding') and contains(@class, 'nav-link')])[1]"));
+    			WebElement Menu = driver.findElement(By.xpath("//a[normalize-space()='Aadhar Seeding/DeSeeding']"));
     			Menu.click();			
 //    			KOService_Elements.ClickSubMenuKO(Menu,"Aadhaar Seeding & Aadhaar De-Seeding");
 //    			driver.switchTo().frame("mainframe");
@@ -252,7 +252,7 @@ public class CommonElements {
 				ClickConfirm();
 				break;
 				
-				/*Loan Data Collection*/
+				/* View Loan Data Collection*/
 				
 				
 				case  "Customer Name":
@@ -406,16 +406,16 @@ public class CommonElements {
 				case "Select Card":
 					SelectRadioButton(arl.get(12),"1");
 					break;
+					
 				case "Select Card2":
 					String cardno = JOptionPane.showInputDialog("Please Enter Which number Card You want to block");
 					SelectRadioButton_2(cardno);
 					break;
 					
 				case "CustomerAuthentication":
-						 CustAuth();
-						break;
-						
-						
+					 CustAuth();
+					 break;
+			
 						//Cheque Book Payment
 					
 				case "ChequeBookRequest":
@@ -512,10 +512,12 @@ public class CommonElements {
         	
 			case "CustomerCreation":
 				Actions action = new Actions(driver);
-				WebElement accountOpeningLink = driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-AccOp']"));
+				WebElement accountOpeningLink = driver.findElement(By.xpath("//a[normalize-space(text())='Account Opening Services']"));
 				action.moveToElement(accountOpeningLink).click().build().perform();
 				break;
 
+				//a[@data-rr-ui-event-key='link-AccOp']
+				
 			case "click eKYC":
 				ClickoneKYC();
 				break;
@@ -631,7 +633,7 @@ public class CommonElements {
 				automatePrint("Account.pdf");
 				break;
 
-						//RDSTDR Open RD Flow
+						/*     RDSTDR Open RD Flow     */
 						
 			//		case "click RDSTDR":
 			//			ClickonRDSTDR();
@@ -658,13 +660,13 @@ public class CommonElements {
 						EnterAccountNumber_new(arl.get(4));
 						break;
 									
-			           case "radio":
-		                    SelectRadio(arl.get(4));
+			        case "SelectRadio":
+			        	   	SelectAccRadio(arl.get(4));
 		                    break;
-						
+		                    
 			       	case "Months":
-						selectDropdownByMonths(arl.get(4));
-					    break;
+			       		selectDropdownByMonths(arl.get(4));
+	                    break;
 					    
 			       	case "DepositAmount":
 						EnterDepositAmount();
@@ -717,7 +719,7 @@ public class CommonElements {
     public void ClickoneKYC() {
 		
 			Actions action = new Actions(driver);
-			WebElement ekyc=driver.findElement(By.xpath("//a[@data-rr-ui-event-key='link-EKYC']"));
+			WebElement ekyc=driver.findElement(By.xpath("//a[normalize-space(text())='EKYC Account Opening']"));
 			action.moveToElement(ekyc).click().build().perform();	
 	}
    
@@ -735,17 +737,29 @@ public class CommonElements {
 		action.moveToElement(ekyc).click().build().perform();	
      }
       
-      
-	  public void selectDropdownByMonths(String valueToSelect) {
-			
-		  WebElement dropdownElement= driver.findElement(By.xpath("//div[@class='css-hlgwow']//input[@id='react-select-3-input']"));
-	        Select select = new Select(dropdownElement);
-	        select.selectByVisibleText(valueToSelect);  
+      public void SelectAccRadio(String AccNo) {
+  		Actions action = new Actions(driver);
+  		WebElement ekyc=driver.findElement(By.xpath("(//div[text()='"+AccNo+"']//preceding::input)["+AccNo+"]"));
+  		action.moveToElement(ekyc).click().build().perform();	
+       }
+      	  
+	  public void selectDropdownByMonths(String months) {
+	        try {
+
+	        	Thread.sleep(5000);
+	            WebElement monthsDropdown = driver.findElement(By.xpath("(//input[contains(@id,\"react-select\")])[1]"));
+	            monthsDropdown.click();
+	            monthsDropdown.sendKeys(months);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
 	    }
 	  
+
 	  public void EnterDepositAmount() {
 	        try {
 	            WebElement Amount = driver.findElement(By.xpath("//input[@placeholder='Enter Deposit Amount']"));
+	            Amount.click();
 	            Amount.sendKeys(arl.get(4));
 	        } catch (Exception e) {
 	            e.printStackTrace();
@@ -1022,7 +1036,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
             if (!Radiobutton.isSelected()) {
                 Radiobutton.click();
             }
-            Thread.sleep(200);
+//            Thread.sleep(200);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1408,18 +1422,13 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 		
 		// Check for screen-level proceed button
 		try{
-
-			WebElement proceedBtn = driver.findElement(By.xpath("(//p[contains(translate(normalize-space(string()), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'PROCEED')])[1]"));
+		       new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(@class,'proceed')]")));
+			WebElement proceedBtn = driver.findElement(By.xpath("//button[contains(@class,'proceed')]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", proceedBtn);
-			
-		
-			
 			boolean isenabled = proceedBtn.isEnabled();
 			if (isenabled) {
 				//proceedBtn.click();
-				       
 				       ((JavascriptExecutor) driver).executeScript("arguments[0].click();", proceedBtn);
-//				       Thread.sleep(35000);
 				return true;
 				
 		}
@@ -1495,7 +1504,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 	{
 		try
 		{
-			WebElement Confirm = driver.findElement(By.xpath("//p[contains(text(),'Cheque Book Request')] | //a[contains(text(),'Cheque Book Request')]"));
+			WebElement Confirm = driver.findElement(By.xpath("//a[contains(text(), 'Chequebook Request')]"));
 			if(Confirm.isDisplayed())
 			{
 				Confirm.click();
@@ -1515,7 +1524,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 	{
 		try
 		{
-			WebElement Confirm = driver.findElement(By.xpath("//a[contains(text(), 'Stop Payment of Cheque')]"));
+			WebElement Confirm = driver.findElement(By.xpath("//a[contains(text(), 'Stop Payment Request')]"));
 			if(Confirm.isDisplayed())
 			{
 				Confirm.click();
@@ -1834,7 +1843,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 		{
 			try
 			{
-				WebElement aadhaarSeeding = driver.findElement(By.xpath("//a[contains(text(), 'Aadhaar Seeding SubKO')]"));
+				WebElement aadhaarSeeding = driver.findElement(By.xpath("//a[normalize-space(text())='KO/SubKO Services']"));
 				aadhaarSeeding.click();
 			}
 			catch(Exception e)
@@ -1855,7 +1864,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 	
 	public void ClickAadhaarSeeding()
 	{
-			WebElement aadhaarSeeding = driver.findElement(By.xpath("//p[@class='CardLabel' and contains(normalize-space(), 'Aadhaar Seeding')]"));
+			WebElement aadhaarSeeding = driver.findElement(By.xpath("//a[normalize-space(text())='Aadhar Seeding/DeSeeding']"));
 			aadhaarSeeding.click();
 		
 	}	

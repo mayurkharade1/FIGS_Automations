@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 18 18:29:09 IST 2025</td>
+<td>Started on:</td><td>Tue Nov 18 19:05:32 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>40 seconds (40839 ms)</td>
+<tr><td>Total time:</td><td>63 seconds (63390 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -82,25 +82,35 @@ function toggleAllBoxes() {
 	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:55)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:18)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.io.IOException: Truncated ZIP file
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readDeflated(ZipArchiveInputStream.java:1005)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.read(ZipArchiveInputStream.java:927)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.read(ZipArchiveThresholdInputStream.java:78)
-	at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:245)
-	at org.apache.poi.util.IOUtils.toByteArrayWithMaxLength(IOUtils.java:225)
-	at org.apache.poi.openxml4j.util.ZipArchiveFakeEntry.&lt;init&gt;(ZipArchiveFakeEntry.java:82)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:98)
-	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:157)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:287)
-	at com.figs.automation.flows.AccountOpening.eKYC(AccountOpening.java:48)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-rr-ui-event-key=&apos;link-EKYC&apos;]&quot;}
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f691700fd020e8cb803fdedd1fc07ab, findElement {using=xpath, value=//a[@data-rr-ui-event-key=&apos;link-EKYC&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SBI\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60018}, goog:processID: 18844, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60018/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f691700fd020e8cb803fdedd1fc07ab
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.figs.automation.runners.Validation.ValidateAccountOpeningClick(Validation.java:2480)
+	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1068)
+	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1048)
+	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:40)
+	at com.figs.automation.flows.AccountOpening.eKYC(AccountOpening.java:71)
 	at com.figs.automation.flows.AccountOpening.run(AccountOpening.java:35)
 	... 28 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace670996243", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace670996243'><pre>java.lang.RuntimeException: ❌ eKYC flow failed
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1642905321", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1642905321'><pre>java.lang.RuntimeException: ❌ eKYC flow failed
 	at com.figs.automation.flows.AccountOpening.run(AccountOpening.java:37)
 	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:55)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:18)
@@ -130,26 +140,39 @@ Caused by: java.io.IOException: Truncated ZIP file
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.IOException: Truncated ZIP file
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.readDeflated(ZipArchiveInputStream.java:1005)
-	at org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.read(ZipArchiveInputStream.java:927)
-	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
-	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.read(ZipArchiveThresholdInputStream.java:78)
-	at org.apache.poi.util.IOUtils.toByteArray(IOUtils.java:245)
-	at org.apache.poi.util.IOUtils.toByteArrayWithMaxLength(IOUtils.java:225)
-	at org.apache.poi.openxml4j.util.ZipArchiveFakeEntry.&lt;init&gt;(ZipArchiveFakeEntry.java:82)
-	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:98)
-	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:157)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:351)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:313)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:287)
-	at com.figs.automation.flows.AccountOpening.eKYC(AccountOpening.java:48)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-rr-ui-event-key=&apos;link-EKYC&apos;]&quot;}
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f691700fd020e8cb803fdedd1fc07ab, findElement {using=xpath, value=//a[@data-rr-ui-event-key=&apos;link-EKYC&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SBI\AppData\Local\...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60018}, goog:processID: 18844, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60018/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f691700fd020e8cb803fdedd1fc07ab
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.figs.automation.runners.Validation.ValidateAccountOpeningClick(Validation.java:2480)
+	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1068)
+	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1048)
+	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:40)
+	at com.figs.automation.flows.AccountOpening.eKYC(AccountOpening.java:71)
 	at com.figs.automation.flows.AccountOpening.run(AccountOpening.java:35)
 	... 28 more
 </pre></div></td>
-<td>35</td>
-<td>com.figs.automation.tests.LoginTest@45752059</td></tr>
+<td>58</td>
+<td>com.figs.automation.tests.LoginTest@206a70ef</td></tr>
 </table><p>
 </body>
 </html>

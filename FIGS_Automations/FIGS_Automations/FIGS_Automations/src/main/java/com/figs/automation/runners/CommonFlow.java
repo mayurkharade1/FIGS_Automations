@@ -23,11 +23,11 @@ public class CommonFlow {
 		try {
 			
 			// Click on "Cash Deposit" main menu
-			WebElement value = driver.findElement(By.xpath("//a[@role='button' and normalize-space(text())='Account Opening']"));
+			WebElement value = driver.findElement(By.xpath("//a[normalize-space(text())='Account Opening Services']"));
 			value.click();
 			// Call submenu selection
 			
-			WebElement submenu = driver.findElement(By.xpath("//a[@role='button']//div[normalize-space(text())='RD/STDR']"));
+			WebElement submenu = driver.findElement(By.xpath("//a[normalize-space(text())='RD/STDR Account Opening']"));
 			submenu.click();
 		} catch (Exception e) {
 		}
@@ -107,7 +107,7 @@ public class CommonFlow {
     		try {
     			  
 
-    			WebElement screen = driver.findElement(By.xpath("(//a[starts-with(normalize-space(text()), 'Loan Deposit')][1])[1]"));
+    			WebElement screen = driver.findElement(By.xpath("//a[normalize-space(text())='Loan Related Services']"));
     			
     			boolean loandpst=screen.isDisplayed();
     			if(loandpst)
@@ -118,7 +118,7 @@ public class CommonFlow {
     			}
     			Thread.sleep(400);
 
-    			WebElement SubMenu = driver.findElement(By.xpath("(//a[normalize-space(text())='Loan Deposit'])[2]"));
+    			WebElement SubMenu = driver.findElement(By.xpath("//a[normalize-space(text())='Loan Deposit']"));
     			SubMenu.click();
     		}
     		catch(Exception e)
@@ -139,7 +139,7 @@ public class CommonFlow {
     		try {
     			  
 
-    			WebElement screen = driver.findElement(By.xpath("(//a[starts-with(normalize-space(text()), 'Loan Deposit')][1])[1]"));
+    			WebElement screen = driver.findElement(By.xpath("//a[normalize-space(text())='Loan Related Services']"));
     			
     			boolean loandpst=screen.isDisplayed();
     			if(loandpst)
@@ -157,11 +157,7 @@ public class CommonFlow {
     		}
     	}
     	
-    	
-    	
-    	
-    	
-    	
+	
     	
     	public void MoneyFlow(String menu) {
     		try {
@@ -193,7 +189,7 @@ public class CommonFlow {
     		{
     			WebElement easebanking = driver.findElement(By.xpath("//a[@role='button' and text()='Ease Banking']"));
     			easebanking.click();
-    			boolean atm = driver.findElement(By.xpath("//a[normalize-space(text())='ATM Card Block Service']")).isDisplayed();
+    			boolean atm = driver.findElement(By.xpath("//a[contains(text(), 'ATM Card Block')]")).isDisplayed();
     			while(atm)
     			{
     				break;
