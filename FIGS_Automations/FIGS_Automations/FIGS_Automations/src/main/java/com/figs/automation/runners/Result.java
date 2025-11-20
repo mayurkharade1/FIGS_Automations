@@ -198,6 +198,9 @@ public class Result {
                 case "APY":
                         sheet = wb.getSheet("SSS_APY");
                         break;
+                case "Lead Creation":
+                    sheet = wb.getSheet("LeadCreation");
+                    break;
                 default:
                     sheet = wb.getSheetAt(0);
             }

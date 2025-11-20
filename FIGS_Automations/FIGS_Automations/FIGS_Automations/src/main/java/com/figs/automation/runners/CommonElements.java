@@ -196,7 +196,7 @@ public class CommonElements {
 			    
 			    
 				case "Enter CIF":
-				enterCIF(arl.get(4));					    
+					enterCIF(arl.get(4));					    
 				break;
 			
 				case "Check CIF Validation":
@@ -339,6 +339,24 @@ public class CommonElements {
 				case "TransactionStatus":
 					
 				break;
+				
+				case "ProductType":
+					handleDropdown(arl.get(4),"1");
+					break;
+				case "ProductCategory":
+					handleDropdown(arl.get(4),"1");
+					break;
+				case "Product":
+					handleDropdown(arl.get(4),"1");
+					break;
+				case "CustomerIntrest":
+					handleDropdown(arl.get(4),"1");
+					break;
+				case "ExistingCustomerRadio":
+					SelectRadioButton(arl.get(4),"1");
+					break;
+					
+				
 				
 				/*SSS*/
 				
@@ -483,7 +501,12 @@ public class CommonElements {
 				case "Lead Genaration":
 					SelectLeadGeneration();	   
 			    break;
-			    
+				case "Lead Creation":
+					SelectLeadCreation();	   
+			    break;
+				case "SelectTitle":
+					selectTitle(arl.get(4));
+					break;
 			    
 			    
 				
@@ -839,6 +862,12 @@ public class CommonElements {
 	    }
 	}
     
+	public void selectTitle(String titlecode){
+		WebElement drpTitle = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[1]"));
+		Select title= new Select(drpTitle);
+		title.selectByValue(titlecode);
+	}
+    
 
     public void clickVerify() {
 	    try {
@@ -1000,7 +1029,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
     public void selectAccountno(String acctNo) {
         try {
         	// Wait for spinner to disappear
-            waitForSpinnerToDisappear(driver);
+            waitForScodenerToDisappear(driver);
             WebElement accountDropdown = driver.findElement(By.xpath("//select[@style]"));
             Select select = new Select(accountDropdown);
             select.selectByValue(acctNo);
@@ -1050,6 +1079,17 @@ public boolean ValidateProceedButtonMoneyTransfer() {
     public void SelectLeadGeneration() {
         try {
             WebElement LG = driver.findElement(By.xpath("//a[text()='Lead Generation']"));
+            ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", LG);
+            ((JavascriptExecutor)driver).executeScript("arguments[0].click();", LG);
+            
+//            Thread.sleep(200);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void SelectLeadCreation() {
+        try {
+            WebElement LG = driver.findElement(By.xpath("//a[text()='Lead Creation']"));
             ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", LG);
             ((JavascriptExecutor)driver).executeScript("arguments[0].click();", LG);
             
@@ -1566,7 +1606,7 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 	{
 		try
 		{
-			WebElement Account =  driver.findElement(By.xpath("//input[@placeholder='Enter Customer Name']"));
+			WebElement Account =  driver.findElement(By.xpath("//input[@placeholder='Enter Customer Name'or @placeholder='Enter First Name' or @placeholder='Enter Middle Name' @placeholder='Enter First Name'@placeholder='Enter Last Name']"));
 			Account.sendKeys(arl.get(4));
 		}
 		catch(Exception e)
@@ -1968,17 +2008,17 @@ public boolean ValidateProceedButtonMoneyTransfer() {
 			aadhaarSeeding.click();
 	}
 	
-	private void waitForSpinnerToDisappear(WebDriver driver) {
-	    By spinner = By.xpath("//div[@class='spinner-border' and @role='status']");
+	private void waitForScodenerToDisappear(WebDriver driver) {
+	    By scodener = By.xpath("//div[@class='spinner-border' and @role='status']");
 
 	    try {
 	        // Very short wait (0.5s) just to see if spinner exists
 	        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofMillis(100));
-	        boolean appeared = shortWait.until(d -> !driver.findElements(spinner).isEmpty());
+	        boolean appeared = shortWait.until(d -> !driver.findElements(scodener).isEmpty());
 
 	        if (appeared) {
 	            // If it appeared, wait max 10s for disappearance
-	            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.invisibilityOfElementLocated(spinner));
+	            new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.invisibilityOfElementLocated(scodener));
 	        }
 	    } catch (TimeoutException te) {
 	    }

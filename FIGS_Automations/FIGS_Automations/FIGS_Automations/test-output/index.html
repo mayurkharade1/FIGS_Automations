@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-FIGS_Automation_Suite" class="navigator-link">
-              <span class="suite-name border-failed">FIGS Automation Suite</span>
+              <span class="suite-name border-passed">FIGS Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-FIGS_Automation_Suite" class="hide-methods failed suite-FIGS_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-FIGS_Automation_Suite -->
-                      <a href="#" panel-name="suite-FIGS_Automation_Suite" class="show-methods failed suite-FIGS_Automation_Suite"> (show)</a> <!-- show-methods failed suite-FIGS_Automation_Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-FIGS_Automation_Suite" class="hide-methods passed suite-FIGS_Automation_Suite"> (hide)</a> <!-- hide-methods passed suite-FIGS_Automation_Suite -->
+                      <a href="#" panel-name="suite-FIGS_Automation_Suite" class="show-methods passed suite-FIGS_Automation_Suite"> (show)</a> <!-- show-methods passed suite-FIGS_Automation_Suite -->
                     </span>
-                    <div class="method-list-content failed suite-FIGS_Automation_Suite">
+                    <div class="method-list-content passed suite-FIGS_Automation_Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-FIGS_Automation_Suite" title="com.figs.automation.tests.LoginTest" class="method navigator-link" hash-for-method="testLoginAndAgentFP">testLoginAndAgentFP</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-FIGS_Automation_Suite -->
+                    </div> <!-- method-list-content passed suite-FIGS_Automation_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,9 +118,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-FIGS_Automation_Suite" class="panel FIGS_Automation_Suite">
-          <div class="suite-FIGS_Automation_Suite-class-failed">
+          <div class="suite-FIGS_Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.figs.automation.tests.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -129,21 +129,10 @@
                   <a name="testLoginAndAgentFP">
                   </a> <!-- testLoginAndAgentFP -->
                   <span class="method-name">testLoginAndAgentFP</span>
-                  <div class="stack-trace">java.lang.RuntimeException:  Lead Creation flow failed
-	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:60)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:101)
-	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:16)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
-	at com.figs.automation.flows.EaseServices.LeadCreation(EaseServices.java:221)
-	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:58)
-	... 28 more
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-FIGS_Automation_Suite-class-failed -->
+          </div> <!-- suite-FIGS_Automation_Suite-class-passed -->
         </div> <!-- panel FIGS_Automation_Suite -->
         <div panel-name="test-xml-FIGS_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -200,12 +189,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLoginAndAgentFP')
 data.setCell(0, 2, 'com.figs.automation.tests.LoginTest')
-data.setCell(0, 3, 70951);
+data.setCell(0, 3, 52919);
 window.suiteTableData['FIGS_Automation_Suite']= { tableData: data, tableDiv: 'times-div-FIGS_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
               <div id="times-div-FIGS_Automation_Suite">
               </div> <!-- times-div-FIGS_Automation_Suite -->
             </div> <!-- times-div -->
@@ -237,14 +226,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testLoginAndAgentFP</span>
-                <span class="method-start">8513 ms</span>
+                <span class="method-start">24743 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">79470 ms</span>
+                <span class="method-start">77664 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

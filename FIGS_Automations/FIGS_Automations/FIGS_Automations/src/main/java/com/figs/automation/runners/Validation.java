@@ -1273,7 +1273,17 @@ Arr2[1] = "No Alert is Active";
 			}
 			else if(arl.get(5).equals("Lead Genaration") &&  isLeadCreationMenuVisible() )
 			{
-				Arr2[1] = txt+" visible";
+				Arr2[1] = txt+" Lead Creation Menu visible";
+				Arr2[0] = "Pass";
+			}
+			else if(arl.get(5).equals("Lead Creation") &&  isLeadCreationPageVisible() )
+			{
+				Arr2[1] = txt+" Clicked on Lead Creation Menu & Home Page Visible";
+				Arr2[0] = "Pass";
+			}
+			else if(arl.get(5).equals("Lead Creation") &&  isTitleSelected() )
+			{
+				Arr2[1] = txt+" Title Selected";
 				Arr2[0] = "Pass";
 			}
 			 else 
@@ -3007,6 +3017,25 @@ public boolean isLeadCreationMenuVisible() {
    {
 	   return true;
    }else return false;
+}
+
+public boolean isLeadCreationPageVisible() {
+    
+    WebElement mobilever = driver.findElement(
+        By.xpath("//p[text()='Enter Customer Details']")
+    );
+   
+   boolean verification= mobilever.isDisplayed();
+   if(verification)
+   {
+	   return true;
+   }else return false;
+}
+public boolean isTitleSelected() {
+    
+    WebElement dropdown = driver.findElement(By.cssSelector("select.select-dropdown"));
+    Select select = new Select(dropdown);
+    return !select.getFirstSelectedOption().getText().equals("Select");
 }
 
 /*
