@@ -28,7 +28,7 @@ public class FunctionalitySelector {
     }
 
     public void selectAndRun() {
-        String[] options = { "All","Loan Deposit","ViewLoanDataCollection","Cash Deposit","Cash Withdrawal","Fund Transfer","Balance Enquiry","Mini Statement","MoneyTransfer","SSS_PMJJBY","SSS_PMSBY","SSS_APY","Aadhaar_Seeding_SubKO","AadharSeeding-DeSeeding","ATM Card Block","ChequeBookRequest","StopPaymentofCheque","Account Opening","RDSTDR","Loan Deposit","Exit"};
+        String[] options = { "All","Loan Deposit","ViewLoanDataCollection","Cash Deposit","Cash Withdrawal","Fund Transfer","Balance Enquiry","Mini Statement","MoneyTransfer","SSS_PMJJBY","SSS_PMSBY","SSS_APY","Aadhaar_Seeding_SubKO","AadharSeeding-DeSeeding","ATM Card Block","ChequeBookRequest","StopPaymentofCheque","Account Opening","RDSTDR","Loan Deposit","Lead Generation","Exit"};
         String functionality = (String) JOptionPane.showInputDialog(
                 null,
                 "Select functionality to run:",
@@ -97,6 +97,9 @@ public class FunctionalitySelector {
             case "AadharSeeding-DeSeeding":
                 new AdharLinkDelink(driver).run();
                 break;
+            case "Lead Generation":
+                new EaseServices(driver).run_LeadGeneration();
+                break;
             case "All":
                 runAll();
                 break;
@@ -106,12 +109,12 @@ public class FunctionalitySelector {
                 break;
 
             default:
-                System.out.println("❌ Functionality not implemented: " + functionality);
+                System.out.println(" Functionality not implemented: " + functionality);
         }
     }
 
     private void runAll() {
-        System.out.println("▶ Running all flows sequentially...");
+        System.out.println(" Running all flows sequentially...");
 
 		try {
 			new LoanDeposit(driver).run_LoanToDeposit();
@@ -216,6 +219,6 @@ public class FunctionalitySelector {
 		}
     
         
-        System.out.println("✅ All flows executed.");
+        System.out.println(" All flows executed.");
     }
 }

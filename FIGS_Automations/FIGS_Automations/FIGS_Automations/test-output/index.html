@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-FIGS_Automation_Suite" class="navigator-link ">
-                    <span>C:\FIGS_Automations\FIGS_Automations\testng.xml</span>
+                    <span>D:\Projects\FIGS_Automations\FIGS_Automations\FIGS_Automations\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,39 +129,16 @@
                   <a name="testLoginAndAgentFP">
                   </a> <!-- testLoginAndAgentFP -->
                   <span class="method-name">testLoginAndAgentFP</span>
-                  <div class="stack-trace">java.lang.RuntimeException:  RDSTDR flow failed
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:46)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:74)
+                  <div class="stack-trace">java.lang.RuntimeException:  Lead Creation flow failed
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:60)
+	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:101)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;]&quot;}
-  (Session info: chrome=141.0.7390.125)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5822a1e367f8975f9f1b9797c9e11355, findElement {value=//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\PREDIC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5822a1e367f8975f9f1b9797c9e11355
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.figs.automation.runners.Validation.ValidateMonths(Validation.java:2917)
-	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1339)
-	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1289)
-	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:61)
-	at com.figs.automation.flows.AccountOpening.RDSTDR(AccountOpening.java:124)
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:44)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
+	at com.figs.automation.flows.EaseServices.LeadCreation(EaseServices.java:221)
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:58)
 	... 28 more
-... Removed 28 stack frames
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -170,7 +147,7 @@ Session ID: 5822a1e367f8975f9f1b9797c9e11355
         </div> <!-- panel FIGS_Automation_Suite -->
         <div panel-name="test-xml-FIGS_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\FIGS_Automations\FIGS_Automations\testng.xml</span>
+            <span class="header-content">D:\Projects\FIGS_Automations\FIGS_Automations\FIGS_Automations\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -223,7 +200,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLoginAndAgentFP')
 data.setCell(0, 2, 'com.figs.automation.tests.LoginTest')
-data.setCell(0, 3, 85050);
+data.setCell(0, 3, 70951);
 window.suiteTableData['FIGS_Automation_Suite']= { tableData: data, tableDiv: 'times-div-FIGS_Automation_Suite'}
 return data;
 }
@@ -263,11 +240,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testLoginAndAgentFP</span>
-                <span class="method-start">3632 ms</span>
+                <span class="method-start">8513 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">88682 ms</span>
+                <span class="method-start">79470 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

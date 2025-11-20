@@ -42,7 +42,7 @@ public class AdharLinkDelink {
         // ✅ Normalize Excel path
         String excelPath = ConfigReader.get("testdata.path");
         File excelFile = new File(excelPath).getAbsoluteFile();
-        System.out.println("✅ Using Excel file: " + excelFile.getAbsolutePath());
+        System.out.println(" Using Excel file: " + excelFile.getAbsolutePath());
 
         try (FileInputStream fis = new FileInputStream(excelFile);
              XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
@@ -64,7 +64,12 @@ public class AdharLinkDelink {
                 arl = new ArrayList<>(ardata);
                 System.out.println(arl);
 
-                if (arl.size() > 10 && "Y".equalsIgnoreCase(arl.get(10)))
+                if (arl.size() > 10 && "Y".equalsIgnoreCase(arl.get(10))) {
+                    if (("Ease Banking".equalsIgnoreCase(arl.get(6)))) {
+                        new CommonFlow(driver).EaseBankingFlow();
+                    }
+                
+//                if (arl.size() > 10 && "Y".equalsIgnoreCase(arl.get(10)))
                 {
                     new CommonElements(driver).AcctServiceElements(arl);
                     new Validation(driver).AcctServiceValidations(arl);
@@ -78,4 +83,5 @@ public class AdharLinkDelink {
         // ✅ Backup Excel file
         ReportsCreation.Take_TestData_Backup(excelFile.getAbsolutePath());
     }
+  }
 }

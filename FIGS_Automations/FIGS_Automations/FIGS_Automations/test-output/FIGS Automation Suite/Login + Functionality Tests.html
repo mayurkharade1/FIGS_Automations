@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Oct 30 14:05:20 IST 2025</td>
+<td>Started on:</td><td>Thu Nov 20 13:44:01 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>88 seconds (88851 ms)</td>
+<tr><td>Total time:</td><td>79 seconds (79639 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,42 +77,19 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.figs.automation.tests.LoginTest.testLoginAndAgentFP()'><b>testLoginAndAgentFP</b><br>Test class: com.figs.automation.tests.LoginTest</td>
-<td><div><pre>java.lang.RuntimeException:  RDSTDR flow failed
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:46)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:74)
+<td><div><pre>java.lang.RuntimeException:  Lead Creation flow failed
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:60)
+	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:101)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;]&quot;}
-  (Session info: chrome=141.0.7390.125)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5822a1e367f8975f9f1b9797c9e11355, findElement {value=//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\PREDIC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5822a1e367f8975f9f1b9797c9e11355
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.figs.automation.runners.Validation.ValidateMonths(Validation.java:2917)
-	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1339)
-	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1289)
-	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:61)
-	at com.figs.automation.flows.AccountOpening.RDSTDR(AccountOpening.java:124)
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:44)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
+	at com.figs.automation.flows.EaseServices.LeadCreation(EaseServices.java:221)
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:58)
 	... 28 more
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace516885190", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace516885190'><pre>java.lang.RuntimeException:  RDSTDR flow failed
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:46)
-	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:74)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace637524006", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace637524006'><pre>java.lang.RuntimeException:  Lead Creation flow failed
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:60)
+	at com.figs.automation.runners.FunctionalitySelector.selectAndRun(FunctionalitySelector.java:101)
 	at com.figs.automation.tests.LoginTest.testLoginAndAgentFP(LoginTest.java:16)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -140,38 +117,12 @@ Session ID: 5822a1e367f8975f9f1b9797c9e11355
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;]&quot;}
-  (Session info: chrome=141.0.7390.125)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5822a1e367f8975f9f1b9797c9e11355, findElement {value=//div[@class=&apos;css-hlgwow&apos;]//input[@id=&apos;react-select-3-input&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.125, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: C:\Users\PREDIC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57732}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57732/devtoo..., se:cdpVersion: 141.0.7390.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5822a1e367f8975f9f1b9797c9e11355
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at com.figs.automation.runners.Validation.ValidateMonths(Validation.java:2917)
-	at com.figs.automation.runners.Validation.TrxnMessageReaderAccountOpening(Validation.java:1339)
-	at com.figs.automation.runners.Validation.AccountOpeningChkResult(Validation.java:1289)
-	at com.figs.automation.runners.Validation.AccountOpeningValidations(Validation.java:61)
-	at com.figs.automation.flows.AccountOpening.RDSTDR(AccountOpening.java:124)
-	at com.figs.automation.flows.AccountOpening.Run_STDR(AccountOpening.java:44)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()&quot; because the return value of &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; is null
+	at com.figs.automation.flows.EaseServices.LeadCreation(EaseServices.java:221)
+	at com.figs.automation.flows.EaseServices.run_LeadGeneration(EaseServices.java:58)
 	... 28 more
 </pre></div></td>
-<td>85</td>
+<td>70</td>
 <td>com.figs.automation.tests.LoginTest@4aa83f4f</td></tr>
 </table><p>
 </body>

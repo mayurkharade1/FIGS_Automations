@@ -59,7 +59,7 @@ public class LoginPage {
     private void click(By locator) {
     	WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     	((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);	
-    	wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    	((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
     }
 
     // Handle SSL Privacy Error page
